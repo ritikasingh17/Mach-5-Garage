@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="homepageDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body class="custom-body">
+    <nav class="navigation-bar px-3 bg-light">
+        <img src="../logo.png" alt="logo" class="logo-link">
+        <a class="profile-link">
+            <i class="fas fa-user-circle profile-icon"></i>
+        </a> 
+    </nav>
+    <div class="hexagon-grid">
+        <div class="hexagon-item"><div class="hexagon" id="employee-hexagon"><span>Employee</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="mechanic-hexagon"><span>Mechanic</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="mechanicOrders-hexagon"><span>Mechanic Orders</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="cars-hexagon"><span>Cars</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="salesTeam-hexagon"><span>Sales Team</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="customers-hexagon"><span>Customers</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="payments-hexagon"><span>Payments</span></div></div>
+        <div class="hexagon-item"><div class="hexagon" id="logout-hexagon"><span>Logout</span></div></div>
+    </div>
+
+    <div class="recaptcha-badge">
+        <img src="download.png" alt="reCAPTCHA Logo" class="recaptcha-logo"/>
+        <a href="https://www.google.com/recaptcha/about/" target="_blank" class="recaptcha-link">
+            Privacy - Terms
+        </a>
+    </div>
+    
+    <script src="homepageDashboard.js"></script>
+</body>
+</html>
