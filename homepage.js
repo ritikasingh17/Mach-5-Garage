@@ -5,53 +5,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
    
-    const spendingHexagon = document.getElementById('spending-hexagon');
-    if (spendingHexagon) {
-        spendingHexagon.addEventListener('click', () => {
-            window.location.href = 'indexSpendings.html';
+    const employeeHexagon = document.getElementById('employee-hexagon');
+    if (employeeHexagon) {
+        employeeHexagon.addEventListener('click', () => {
+            window.location.href = 'indexEmployee.html';
         });
     }
 
-    const budgetHexagon = document.getElementById('budget-hexagon');
-    if (budgetHexagon) {
-        budgetHexagon.addEventListener('click', () => {
-            window.location.href = 'budget.html';
+    const mechanicHexagon = document.getElementById('mechanic-hexagon');
+    if (mechanicHexagon) {
+        mechanicHexagon.addEventListener('click', () => {
+            window.location.href = 'mechanic.html';
         });
     }
 
-    const chatbotHexagon = document.getElementById('chatbot-hexagon');
-    if(chatbotHexagon)
+    const mechanicOrdersHexagon = document.getElementById('mechanicOrders-hexagon');
+    if(mechanicOrdersHexagon)
     {
-        chatbotHexagon.addEventListener('click', () =>
-        {
-            window.location.href = 'chatbot.html';
+        mechanicOrdersHexagon.addEventListener('click', () => {
+            window.location.href = 'mechanicOrders.html';
+        });
+    }
+
+    const carsHexagon = document.getElementById('cars-hexagon');
+    if(carsHexagon)
+    {
+        carsHexagon.addEventListener('click', () => {
+            window.location.href = 'cars.html';
+        });
+    }
+
+    const salesTeamHexagon = document.getElementById('salesTeam-hexagon');
+    if(salesTeamHexagon)
+    {
+        salesTeamHexagon.addEventListener('click', () => {
+            window.location.href = 'salesTeam.html';
+        });
+    }
+
+    const customersHexagon = document.getElementById('customers-hexagon');
+    if(customersHexagon)
+    {
+        customersHexagon.addEventListener('click', () => {
+            window.location.href = 'customers.html';
+        });
+    }
+
+    const paymentsHexagon = document.getElementById('payments-hexagon');
+    if(paymentsHexagon)
+    {
+        paymentsHexagon.addEventListener('click', () => {
+            window.location.href = 'payments.html';
         });
     }
 
     const logoutHexagon = document.getElementById('logout-hexagon');
     if(logoutHexagon)
     {
-        logoutHexagon.addEventListener('click', () =>
-        {
+        logoutHexagon.addEventListener('click', () => {
             window.location.href = 'index.html';
-        });
-    }
-
-    const goalsHexagon = document.getElementById('goals-hexagon');
-    if(goalsHexagon)
-    {
-        goalsHexagon.addEventListener('click', () =>
-        {
-            window.location.href = 'resetPasswordPage.html';
-        });
-    }
-
-    const goalTrackerHexagon = document.getElementById('goalTracker-hexagon');
-    if(goalTrackerHexagon)
-    {
-        goalTrackerHexagon.addEventListener('click', () =>
-        {
-            window.location.href = 'goalTracker.html';
         });
     }
 });
