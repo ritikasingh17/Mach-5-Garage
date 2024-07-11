@@ -44,7 +44,7 @@ VALUES
     (19,"Aladdin","Giacomo","1-977-248-4819","a.giacomo@m5garage.com"),
     (20,"Winter","Quentin","1-638-405-2478","quentinwinter8121@m5garage.com");
 
-INSERT INTO `Car` (`vinNum`, `make`, `model`, `year`) 
+INSERT INTO `Car` (`vin`, `make`, `model`, `year`) 
 VALUES
     ('1MBENZ0A123456789', 'Mercedes-Benz', 'E-Class', 2022),
     ('2BMW01B2345678901', 'BMW', 'X5', 2023),
@@ -67,7 +67,7 @@ VALUES
     ('19ROLLS0S12345618', 'Rolls-Royce', 'Ghost', 2023),
     ('20MASER0T23456719', 'Maserati', 'Quattroporte', 2022);
 
-INSERT INTO `Provides` (`vinNum`, `customerID`)
+INSERT INTO `Provides` (`vin`, `customerID`)
 VALUES
     ('1MBENZ0A123456789', '1'),
     ('2BMW01B2345678901', '2'),
@@ -90,7 +90,7 @@ VALUES
     ('19ROLLS0S12345618', '19'),
     ('20MASER0T23456719', '20');
 
-INSERT INTO `Works_On` (`employeeID`, `vinNum`, `repairDate`) 
+INSERT INTO `Works_On` (`employeeID`, `vin`, `repairDate`) 
 VALUES
     (1, '1MBENZ0A123456789', '2022-04-13 13:39:42'),
     (2, '2BMW01B2345678901', '2022-12-13 19:21:21'),
@@ -113,30 +113,7 @@ VALUES
     (19, '19ROLLS0S12345618', '2015-12-14 20:52:08'),
     (20, '20MASER0T23456719', '2022-12-15 20:01:11');
 
-INSERT INTO `Orders_Parts` (`employeeID`,`partID`,`orderNum`)
-VALUES
-    (1,10,8),
-    (2,19,4),
-    (3,15,9),
-    (4,19,17),
-    (5,7,15),
-    (6,4,16),
-    (7,16,12),
-    (8,3,13),
-    (9,9,11),
-    (10,6,7),
-    (11,2,18),
-    (12,8,12),
-    (13,2,19),
-    (14,19,12),
-    (15,7,4),
-    (16,11,10),
-    (17,10,3),
-    (18,17,16),
-    (19,20,9),
-    (20,7,12);
-
-INSERT INTO `Parts` (`partID`,`partName`)
+INSERT INTO `Part` (`partID`,`partName`)
 VALUES
     (1,"QX89"),
     (2,"HH18"),
@@ -159,7 +136,29 @@ VALUES
     (19,"IA88"),
     (20,"XI52");
 
-INSERT INTO `Needs_Part` (`partID`, `vinNum`)
+INSERT INTO `Orders_Part` (`employeeID`,`partID`,`orderNum`)
+VALUES
+    (1,10,8),
+    (2,19,4),
+    (3,15,33),
+    (4,19,17),
+    (5,7,15),
+    (6,4,160),
+    (7,16,92),
+    (8,3,13),
+    (9,9,11),
+    (10,6,7),
+    (11,2,18),
+    (13,2,19),
+    (14,19,12),
+    (15,7,53),
+    (16,11,10),
+    (17,10,3),
+    (18,17,162),
+    (19,20,9),
+    (20,7,52);
+
+INSERT INTO `Needs_Part` (`partID`, `vin`)
 VALUES
     (19, '1MBENZ0A123456789'),
     (10, '2BMW01B2345678901'),
@@ -181,29 +180,6 @@ VALUES
     (12, '18BENTL0R01234517'),
     (16, '19ROLLS0S12345618'),
     (4, '20MASER0T23456719');
-
-INSERT INTO `Supplies` (`supplierID`,`partID`)
-VALUES
-  (1,17),
-  (2,3),
-  (3,5),
-  (4,18),
-  (5,6),
-  (6,5),
-  (7,16),
-  (8,17),
-  (9,6),
-  (10,12),
-  (11,18),
-  (12,9),
-  (13,3),
-  (14,8),
-  (15,9),
-  (16,20),
-  (17,10),
-  (18,17),
-  (19,14),
-  (20,8);
 
 INSERT INTO `Supplier` (`supplierID`, `supplierName`)
 VALUES
@@ -227,6 +203,29 @@ VALUES
   (18, 'Webasto'),
   (19, 'Schaeffler'),
   (20, 'Autoliv');
+  
+INSERT INTO `Supplies` (`supplierID`,`partID`)
+VALUES
+  (1,17),
+  (2,3),
+  (3,5),
+  (4,18),
+  (5,6),
+  (6,5),
+  (7,16),
+  (8,17),
+  (9,6),
+  (10,12),
+  (11,18),
+  (12,9),
+  (13,3),
+  (14,8),
+  (15,9),
+  (16,20),
+  (17,10),
+  (18,17),
+  (19,14),
+  (20,8);
 
 INSERT INTO `Payment` (`paymentID`,`paymentDate`,`amount`)
 VALUES

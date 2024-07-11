@@ -41,10 +41,10 @@ CREATE TABLE Supplier (
 CREATE TABLE Payment (
   paymentID INT NOT NULL,
   paymentDate DATETIME,
-  amount INT,
+  amount DECIMAL(10,2),
   PRIMARY KEY (paymentID));
   
-  CREATE TABLE Works_On (
+CREATE TABLE Works_On (
   employeeID INT NOT NULL,
   vin varchar(45) NOT NULL,
   repairDate DATETIME,
@@ -52,14 +52,14 @@ CREATE TABLE Payment (
   FOREIGN KEY (employeeID) REFERENCES Employee (employeeID),
   FOREIGN KEY (vin) REFERENCES Car (vin));
   
-  CREATE TABLE Supplies (
+CREATE TABLE Supplies (
   supplierID INT NOT NULL,
   partID INT NOT NULL,
   PRIMARY KEY (supplierID, partID),
   FOREIGN KEY (supplierID) REFERENCES Supplier (supplierID),
   FOREIGN KEY (partID) REFERENCES Part (partID));
   
-  CREATE TABLE Needs_Part (
+CREATE TABLE Needs_Part (
   vin varchar(45) NOT NULL,
   partID INT NOT NULL,
   PRIMARY KEY (vin, partID),
