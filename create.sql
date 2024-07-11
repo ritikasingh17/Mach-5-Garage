@@ -9,7 +9,7 @@ CREATE TABLE Customer (
   customerID INT NOT NULL,
   fname varchar(45),
   lname varchar(45),
-  `phone#` INT,
+  `phoneNum` INT,
   address varchar(45),
   PRIMARY KEY (customerID));
 
@@ -17,7 +17,7 @@ CREATE TABLE Employee (
   employeeID INT NOT NULL,
   fname varchar(45),
   lname varchar(45),
-  `phone#` INT,
+  `phoneNum` INT,
   address varchar(45),
   PRIMARY KEY (employeeID));
 
