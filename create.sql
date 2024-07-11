@@ -44,7 +44,7 @@ CREATE TABLE Payment (
   amount INT,
   PRIMARY KEY (paymentID));
   
-  CREATE TABLE works_on (
+  CREATE TABLE Works_On (
   employeeID INT NOT NULL,
   vin INT NOT NULL,
   partID INT NOT NULL,
@@ -54,28 +54,28 @@ CREATE TABLE Payment (
   FOREIGN KEY (vin) REFERENCES Car (vin),
   FOREIGN KEY (partID) REFERENCES Part (partID));
   
-  CREATE TABLE supplies (
+  CREATE TABLE Supplies (
   supplierID INT NOT NULL,
   partID INT NOT NULL,
   PRIMARY KEY (supplierID, partID),
   FOREIGN KEY (supplierID) REFERENCES Supplier (supplierID),
   FOREIGN KEY (partID) REFERENCES Part (partID));
   
-  CREATE TABLE needs_part (
+  CREATE TABLE Needs_Part (
   vin INT NOT NULL,
   partID INT NOT NULL,
   PRIMARY KEY (vin, partID),
   FOREIGN KEY (vin) REFERENCES Car (vin),
   FOREIGN KEY (partID) REFERENCES Part (partID));
 
-CREATE TABLE pays (
+CREATE TABLE Pays (
   paymentID INT NOT NULL,
   customerID INT NOT NULL,
   PRIMARY KEY (paymentID, customerID),
   FOREIGN KEY (paymentID) REFERENCES Payment (paymentID),
   FOREIGN KEY (customerID) REFERENCES Customer (customerID));
   
-CREATE TABLE provides (
+CREATE TABLE Provides (
   vin INT NOT NULL,
   customerID INT NOT NULL,
   PRIMARY KEY (vin, customerID),
