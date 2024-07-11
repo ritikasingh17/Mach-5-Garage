@@ -88,10 +88,10 @@
       <thead class="thead-dark">
         <tr>
           <th>Employee ID</th>
-          <th>Name</th>
-          <th>Address</th>
-          <th>Number</th>
-          <th>Title</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Phone Number</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody id="employee-table"></tbody>
@@ -112,10 +112,10 @@
                 tr.id = `employee-${employee.id}`;
                 tr.innerHTML = `
                     <td id="employeeID-${employee.id}">${employee.employeeID}</td>
-                    <td id="name-${employee.id}">${employee.name}</td>
-                    <td id="address-${employee.id}">${employee.address}</td>
-                    <td id="number-${employee.id}">${employee.number}</td>
-                    <td id="title-${employee.id}">${employee.title}</td>
+                    <td id="fname-${employee.id}">${employee.fname}</td>
+                    <td id="lname-${employee.id}">${employee.lname}</td>
+                    <td id="phoneNum-${employee.id}">${employee.phoneNum}</td>
+                    <td id="email-${employee.id}">${employee.email}</td>
                     <td>
                         <button  class="btn btn-danger btn-sm" onclick="deleteEmployee(${employee.id})">Delete</button>
                         <button  class="btn btn-primary btn-sm" onclick="editEmployee(${employee.id})">Edit</button>

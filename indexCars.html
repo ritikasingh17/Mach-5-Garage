@@ -1,0 +1,183 @@
+//Cars HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Add your custom styles here */
+        .navbar-custom {
+            background-color: #D9D9D9;
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar-custom a {
+            color: #333;
+            font-weight: bold;
+            font-size: 24px; /* Updated font size */
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s ease;
+        }
+
+        .navbar-custom a:hover {
+            color: #000;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        body {
+            background: linear-gradient(to right, rgba(6, 6, 225, 0.457) 50%, rgb(154, 159, 178) 80%);
+            padding-top: 86px; /* Padding to push the content below the navbar */
+        }
+
+        table {
+            background-color: white;
+        }
+
+        .add-btn {
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 28px;
+            transition: background 0.3s, transform 0.2s;
+            width: 300px;
+        }
+
+        .add-btn:hover {
+            background-image: linear-gradient(45deg, rgb(154, 159, 178), rgba(6, 6, 225, 0.457));
+            transform: scale(1.05);
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-light navbar-custom">
+    <div class="container-fluid">
+        <img src="Logo.png" alt="Logo" style="width: 86px; height: 86px; margin-top: 5px;">
+        <a href="indexDashboard.html">Home</a>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<div class="container">
+    <h1 style="text-align: center;">Cars</h1>
+    <br>
+    <div class="button-container">
+        <button class="add-btn" onclick="window.location.href='addCar.html';">Add Car</button>
+    </div>
+    <br>
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>VIN</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+        </tr>
+        </thead>
+        <tbody id="car-table"></tbody>
+    </table>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', async function() {
+        try {
+            const response = await fetch('http://localhost:4024/car-cars');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const cars = await response.json();
+
+            const carTable = document.getElementById('car-table');
+            carTable.innerHTML = ''; // Clear the table
+
+            cars.forEach(car => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <tr id="car-${car.id}">
+                        <td id="vin-${car.id}">${car.vin}</td>
+                        <td id="year-${car.id}">${car.year}</td>
+                        <td id="make-${car.id}">${car.make}</td>
+                        <td id="model-${car.id}">${car.model}</td>
+                        <td>
+                            <button class="btn btn-danger" onclick="deleteCar(${car.id})">Delete</button>
+                            <button class="btn btn-primary" onclick="editCar(${car.id})">Edit</button>
+                        </td>
+                    </tr>
+                `;
+                carTable.appendChild(row);
+            });
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to fetch cars: ' + error.message);
+        }
+    });
+
+    // Delete car
+    function deleteCar(id) {
+        if (confirm('Are you sure you want to delete this car?')) {
+            fetch(`http://localhost:4024/car/${id}`, { method: 'DELETE' })
+                .then(response => {
+                    if (response.ok) {
+                        alert('car deleted successfully');
+                        document.getElementById(`car-${id}`).remove();
+                    }
+                })
+        }
+    }
+
+    // Edit car
+    function editCar(id) {
+        const vin = prompt("Enter new VIN: ", document.getElementById(`vin-${id}`).textContent);
+        const year = prompt("Enter new year: ", document.getElementById(`year-${id}`).textContent);
+        const make = prompt("Enter new make:", document.getElementById(`make-${id}`).textContent);
+        const model = prompt("Enter new model:", document.getElementById(`model-${id}`).textContent);
+
+        if (year && make && model) {
+            fetch(`http://localhost:4024/car/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ year, make, model })
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Car updated successfully');
+                        window.location.reload();
+                    } else {
+                        throw new Error('Failed to update car');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error updating car:', error);
+                    alert('Failed to update car: ' + error);
+                });
+        } else {
+            alert('Year, make, and model are required.');
+        }
+    }
+
+
+    
+</script>
+</body>
+</html>
