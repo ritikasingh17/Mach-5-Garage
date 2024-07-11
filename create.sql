@@ -1,5 +1,5 @@
 CREATE TABLE Car (
-  vin INT NOT NULL,
+  vin varchar(45) NOT NULL,
   year INT,
   make varchar(45),
   model varchar(45),
@@ -9,16 +9,16 @@ CREATE TABLE Customer (
   customerID INT NOT NULL,
   fname varchar(45),
   lname varchar(45),
-  `phoneNum` INT,
-  address varchar(45),
+  `phoneNum` varchar(45),
+  email varchar(45),
   PRIMARY KEY (customerID));
 
 CREATE TABLE Employee (
   employeeID INT NOT NULL,
   fname varchar(45),
   lname varchar(45),
-  `phoneNum` INT,
-  address varchar(45),
+  `phoneNum` varchar(45),
+  email varchar(45),
   PRIMARY KEY (employeeID));
 
 CREATE TABLE Mechanic (
@@ -40,19 +40,17 @@ CREATE TABLE Supplier (
   
 CREATE TABLE Payment (
   paymentID INT NOT NULL,
-  paymentDateTime DATETIME,
+  paymentDate DATETIME,
   amount INT,
   PRIMARY KEY (paymentID));
   
   CREATE TABLE Works_On (
   employeeID INT NOT NULL,
-  vin INT NOT NULL,
-  partID INT NOT NULL,
+  vin varchar(45) NOT NULL,
   repairDate DATETIME,
-  PRIMARY KEY (employeeID, vin, partID),
+  PRIMARY KEY (employeeID, vin),
   FOREIGN KEY (employeeID) REFERENCES Employee (employeeID),
-  FOREIGN KEY (vin) REFERENCES Car (vin),
-  FOREIGN KEY (partID) REFERENCES Part (partID));
+  FOREIGN KEY (vin) REFERENCES Car (vin));
   
   CREATE TABLE Supplies (
   supplierID INT NOT NULL,
@@ -62,7 +60,7 @@ CREATE TABLE Payment (
   FOREIGN KEY (partID) REFERENCES Part (partID));
   
   CREATE TABLE Needs_Part (
-  vin INT NOT NULL,
+  vin varchar(45) NOT NULL,
   partID INT NOT NULL,
   PRIMARY KEY (vin, partID),
   FOREIGN KEY (vin) REFERENCES Car (vin),
@@ -76,12 +74,12 @@ CREATE TABLE Pays (
   FOREIGN KEY (customerID) REFERENCES Customer (customerID));
   
 CREATE TABLE Provides (
-  vin INT NOT NULL,
+  vin varchar(45) NOT NULL,
   customerID INT NOT NULL,
   PRIMARY KEY (vin, customerID),
   FOREIGN KEY (vin) REFERENCES Car (vin),
   FOREIGN KEY (customerID) REFERENCES Customer (customerID));
-
+  
 CREATE TABLE Orders_Part (
   orderNum INT NOT NULL,
   employeeID INT NOT NULL,
