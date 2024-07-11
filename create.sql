@@ -81,3 +81,11 @@ CREATE TABLE Provides (
   PRIMARY KEY (vin, customerID),
   FOREIGN KEY (vin) REFERENCES Car (vin),
   FOREIGN KEY (customerID) REFERENCES Customer (customerID));
+
+CREATE TABLE Orders_Part (
+  orderNum INT NOT NULL,
+  employeeID INT NOT NULL,
+  partID INT NOT NULL,
+  PRIMARY KEY (orderNum),
+  FOREIGN KEY (employeeID) REFERENCES Employee (employeeID),
+  FOREIGN KEY (partID) REFERENCES Part (partID));
