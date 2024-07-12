@@ -8,14 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const employeeHexagon = document.getElementById('employee-hexagon');
     if (employeeHexagon) {
         employeeHexagon.addEventListener('click', () => {
-            window.location.href = 'indexEmployee.html';
-        });
-    }
-
-    const mechanicHexagon = document.getElementById('mechanic-hexagon');
-    if (mechanicHexagon) {
-        mechanicHexagon.addEventListener('click', () => {
-            window.location.href = 'mechanic.html';
+            window.location.href = 'inputEmployees.html';
         });
     }
 
@@ -31,23 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(carsHexagon)
     {
         carsHexagon.addEventListener('click', () => {
-            window.location.href = 'cars.html';
-        });
-    }
-
-    const salesTeamHexagon = document.getElementById('salesTeam-hexagon');
-    if(salesTeamHexagon)
-    {
-        salesTeamHexagon.addEventListener('click', () => {
-            window.location.href = 'salesTeam.html';
-        });
-    }
-
-    const customersHexagon = document.getElementById('customers-hexagon');
-    if(customersHexagon)
-    {
-        customersHexagon.addEventListener('click', () => {
-            window.location.href = 'customers.html';
+            window.location.href = 'inputCars.html';
         });
     }
 
@@ -55,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if(paymentsHexagon)
     {
         paymentsHexagon.addEventListener('click', () => {
-            window.location.href = 'payments.html';
+            window.location.href = 'inputPayments.html';
         });
     }
 

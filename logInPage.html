@@ -1,10 +1,10 @@
-//log in page HTML
+<!--log in page HTML-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Log In Page</title>
     <link rel="stylesheet" href="stylesLogin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
@@ -12,17 +12,15 @@
     <div class="login-container">
         <div class="hexagon logo-hexagon">
             <a href="indexDashboard.html">
-                <img src="Logo.png" alt="Logo">
             </a>
         </div>
         <div class="login-panel">
-            <h2 class="login-title">Login</h2>
+            <h2 class="login-title">Log In</h2>
             <form class="login-form" onsubmit="handleLogin(event)">
                 <input type="text" id="username" placeholder="Username">
                 <input type="password" id="password" placeholder="Password">
                 <a href="resetPasswordPage.html" class="forgot-password">Forgot password?</a>
-                <button type="submit">LOGIN</button>
-                <button type="button" onclick="location.href='signUpPage.html';" class="sign-up-button">Sign Up</button>
+                <button type="button" onclick="location.href='indexDashboard.html';" class="log-in-button">Log In</button>
             </form>
             <div class="divider">
                 <span>Or login with</span>
