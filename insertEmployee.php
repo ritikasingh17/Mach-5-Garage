@@ -1,6 +1,6 @@
 //insert employee PHP
 <?php
-include 'db.php';
+include 'connection.php';
 
 $id = $_POST['employeeID'];
 $value1 = $_POST['fname'];

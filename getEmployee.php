@@ -1,6 +1,6 @@
 //get employee PHP
 <?php
-include 'db.php';
+include 'connection.php';
 
 $id = $_GET['employeeID'];
 

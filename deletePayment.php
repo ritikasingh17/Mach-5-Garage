@@ -1,6 +1,6 @@
 //delete payment PHP
 <?php
-include 'db.php';
+include 'connection.php';
 
 $id = $_POST['paymentID'];
 

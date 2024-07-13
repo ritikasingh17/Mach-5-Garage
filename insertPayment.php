@@ -1,6 +1,6 @@
 //insert payment PHP
 <?php
-include 'db.php';
+include 'connection.php';
 
 $id = $_POST['paymentID'];
 $value1 = $_POST['paymentDateTime'];
