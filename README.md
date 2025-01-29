@@ -97,7 +97,7 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/gene-machine/24U-CS4347-5U1-Group-5.git
+   git clone https://github.com/ritikasingh17/Mach-5-Garage.git
    ```
 3. Install NPM packages
    ```sh
