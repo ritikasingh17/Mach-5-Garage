@@ -11,7 +11,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/gene-machine/24U-CS4347-5U1-Group-5">
+  <a href="https://github.com/ritikasingh17/Mach-5-Garage">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -20,14 +20,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/gene-machine/24U-CS4347-5U1-Group-5"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ritikasingh17/Mach-5-Garage"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/gene-machine/24U-CS4347-5U1-Group-5">View Demo</a>
+    <a href="https://github.com/ritikasingh17/Mach-5-Garage">View Demo</a>
     ·
-    <a href="https://github.com/gene-machine/24U-CS4347-5U1-Group-5/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/ritikasingh17/Mach-5-Garage/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/gene-machine/24U-CS4347-5U1-Group-5/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/ritikasingh17/Mach-5-Garage/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -137,7 +137,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Your Name - email@email_client.com
 
-Project Link: [https://github.com/gene-machine/24U-CS4347-5U1-Group-5](https://github.com/gene-machine/24U-CS4347-5U1-Group-5)
+Project Link: [https://github.com/ritikasingh17/Mach-5-Garage](https://github.com/ritikasingh17/Mach-5-Garage)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
